@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  Box,
+  Button,
+  Heading,
+  Text
+} from 'rebass'
+import { ThemeProvider } from 'emotion-theming'
+import theme from '@rebass/preset'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App boxApp">
+        <Box
+          sx={{
+            p: 4,
+            color: 'text',
+            bg: 'background',
+            fontFamily: 'body',
+            fontWeight: 'body',
+            lineHeight: 'body',
+          }}>
+          <Heading variant='display'>Pomo</Heading>
+          <Text mb={4}>your pomodoro tracking app</Text>
+          <Button mr={3}>
+            Start
+          </Button>
+          <Button variant='secondary'>
+            Stop
+          </Button>
+        </Box>
+
+      </div>
+    </ThemeProvider>
   );
 }
 
